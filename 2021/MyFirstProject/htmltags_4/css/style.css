@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*,*:before,*:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+nav,footer,header,aside{display:block;}
+html,body{
+    height:100%;
+    width: 100%;
+    font-size: 100%;
+    line-height:1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+}
+input,button,textarea{font-family: inherit;}
+input::-ms-clear{display:none;}
+button{cursor:pointer;}
+button::-moz-focus-inner{padding: 0;border: 0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:400;}
+.Body{
+    background-color: gray;
+    
+}
+
+.Back{
+    height: 700px;
+    background: url(../img/bg.png) 0 0 no-repeat ;
+}
+.Front{
+    padding: 125px 0 137px 125px;
+    max-width: 841px;
+    text-align: center;
+}
+.content-top{
+    text-align: center;
+}
+.Title{
+     margin: 5px;
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2.8px;
+    color:gray;
+}
+.Title2{
+    font-size: 36px;
+    line-height: 50px;
+    font-family:Arial,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    white-space:normal;
+}
+.Picture{
+    height:561px;
+    width:841px;
+    
+}
+.Paragraph{
+    margin: 20px 0 20px 0;
+    font-size: 24px;
+    color:gray;
+}
+.Paragraph p{
+    margin: 0px 0 25px 0;
+}
+.content-button{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-shadow:1px gray;
+}
+  
