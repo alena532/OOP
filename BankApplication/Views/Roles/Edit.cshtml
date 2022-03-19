@@ -1,0 +1,13 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model BankApplication.ViewModel.ChangeRole
+<form method="post" asp-action="Edit" asp-controller="Roles">
+    <input type="hidden" name="userId" value="@Model.UserId" />
+     <div>
+         @foreach (IdentityRole role in Model.AllRoles)
+         {
+             <input type="checkbox" name="roles" value="@role.Name"
+                     @(Model.UserRoles.Contains(role.Name) ? "checked=\"checked\"" : "") />@role.Name <br />
+         }
+     </div>
+     <button type="submit">Сохранить</button>
+</form>

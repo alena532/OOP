@@ -1,0 +1,6 @@
+﻿@model BankApplication.Models.Account
+<Label>Current sum in acoount @Model.Sum</Label>
+ <a asp-action="AddSumToAccount" asp-route-id="@Model.Id"  method="post">Put money</a>
+
+<a asp-action="TakeSumFromAccount" asp-route-id="@Model.Id"  method="post">Take money</a>
+      

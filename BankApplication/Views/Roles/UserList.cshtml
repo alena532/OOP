@@ -1,0 +1,16 @@
+﻿@model IEnumerable<BankApplication.Models.User>
+<table>
+    <tr>
+         <th>UserName</th>
+        <th>Year</th>
+    </tr>
+@foreach(var user in @Model)
+{
+    <tr>
+        <td>@user.UserName</td>
+       <td>
+          <a asp-action="Edit" asp-route-userid="@user.Id">Права доступа</a>
+       </td>
+    </tr>
+}    
+ </table>

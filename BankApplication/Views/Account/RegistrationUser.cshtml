@@ -1,0 +1,78 @@
+﻿@using BankApplication.Models;
+@model BankApplication.ViewModel.UserRegistrationModel
+<link rel="stylesheet" href="~/css/REGISTRUSERSTYLE.css" />
+<h1>Log in</h1>
+<form method="post" asp-action="RegistrationUser" asp-controller="Account">
+    <div asp-validation-summary="ModelOnly"></div>
+        <div>
+            <label>Bank</label>
+            <select asp-for="BankName">
+                <option value="BSB">BSB</option>
+                <option value="BelarusBank">BelarusBank</option>
+                <option value="AlphaBank">AlphaBank</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label>Role</label>
+            <select asp-for="Role">
+                <option value="Client">Client</option>
+                <option value="Administrator">Administrator</option>
+                <option value="Manager">Manager</option>
+                <option value="Operator">Operator</option>
+                <option value="Enterprise specialist">Enterprise specialist</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label asp-for="Email"></label>
+            <input type="text" asp-for="Email" />
+            <span asp-validation-for="Email"></span>
+        </div>
+        <br>
+        <div>
+            <label asp-for="UserName"></label>
+            <input type="text" asp-for="UserName" />
+            <span asp-validation-for="UserName"></span>
+        </div>
+        <br>
+        <div>
+            <label asp-for="Number"></label>
+            <input type="number" asp-for="Number" />
+            <span asp-validation-for="Number"></span>
+        </div>
+        <br>
+        <div>
+            <label asp-for="PassportSeries"></label>
+            <input type="text" asp-for="PassportSeries" />
+            <span asp-validation-for="PassportSeries"></span>
+        </div>
+        <br>
+         <div>
+            <label asp-for="PassportNumber"></label>
+            <input type="number" asp-for="PassportNumber" />
+            <span asp-validation-for="PassportNumber"></span>
+        </div>
+        <br>
+         <div>
+            <label asp-for="IdentificationNumber"></label>
+            <input type="text" asp-for="IdentificationNumber" />
+            <span asp-validation-for="IdentificationNumber"></span>
+        </div>
+        <br>
+        <div>
+            <label asp-for="Password"></label>
+            <input type="password" asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+        </div>
+        <br>
+        <div>
+            <label asp-for="PasswordConfirm"></label><br />
+            <input asp-for="PasswordConfirm" />
+             <span asp-validation-for="PasswordConfirm"></span>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="submit" />
+        </div>
+</form>

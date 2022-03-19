@@ -1,0 +1,26 @@
+﻿@model BankApplication.ViewModel.LoginViewModel
+<link rel="stylesheet" href="~/css/REGISTRUSERSTYLE.css" />
+<h1>Sign in</h1>
+<form method="post" asp-controller="Account" asp-action="Login" asp-route-returnUrl="@Model.ReturnUrl" >
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <div>
+            <label asp-for="NameUser"></label>
+            <input type="text" asp-for="NameUser" />
+            <span asp-validation-for="NameUser"></span>
+        </div>
+        <div>
+            <label asp-for="Password"></label>
+            <input type="password" asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div>
+            <label asp-for="RememberMe"></label>
+            <input  class="check" type="checkbox" asp-for="RememberMe" />
+        </div>
+        </br>
+        <div>
+            <input type="submit" value="submit" />
+        </div>
+    </div>
+</form>

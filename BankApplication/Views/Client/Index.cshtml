@@ -1,0 +1,22 @@
+﻿@model BankApplication.Models.Entity.Client
+ <a asp-action="Account" asp-controller="Client">Accounts</a>
+<a asp-action="Credit" asp-controller="Client">Credits</a>
+@*<table>
+    <tr>
+         <th>AccountName</th>
+        <th>Sum</th>
+    </tr>
+@foreach(var acc in @Model)
+{
+    <tr>
+        <td>@acc.Name</td>
+        <td>@acc.Sum</td>
+        <td>
+           
+                   
+   
+        </td>
+    </tr>
+}    
+ </table>
+*@

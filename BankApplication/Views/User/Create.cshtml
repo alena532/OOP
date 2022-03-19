@@ -1,0 +1,22 @@
+﻿@model BankApplication.ViewModel.CreateUserViewModel
+<form method="post" asp-action="Create" asp-controller="User">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <div>
+            <label asp-for="Email"></label>
+            <input type="text" asp-for="Email" />
+        </div>
+        <div>
+            <label asp-for="Password"></label>
+            <input type="password" asp-for="Password" />
+        </div>
+        <div>
+            <label asp-for="Year"></label><br />
+            <input type="number" asp-for="Year" />
+        </div>
+        <div>
+            <input type="submit" value="Войти" />
+        </div>
+    </div>
+</form>
+

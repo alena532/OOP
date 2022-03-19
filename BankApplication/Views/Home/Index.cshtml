@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/IndexStyle.css" />
+    <title>Index</title>
+</head>
+    <body>
+        <div class="wrapper">
+            <div class="image">
+                <img src="~/img/img-01.png">
+            </div>
+            <div class="content">
+                  <h1>Welcome to bank application</h1>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <p>@User.Identity.Name</p>
+                    <form method="post" asp-controller="Account" asp-action="Logout">
+                         <input type="submit" value="Выход" />
+                    </form>
+                 }
+                else
+                 {
+                    <div class="btn">
+                        <a class="btn" asp-controller="Account" asp-action="Login">Sign in</a>
+                        <a class="btn" asp-controller="Account" asp-action="Registration">Sign up</a>
+                    </div>
+                 }
+            </div>
+       </div>
+    </body>
+</html>

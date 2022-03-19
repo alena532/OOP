@@ -1,0 +1,24 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model IEnumerable<BankApplication.Models.Account>
+<a asp-action="BankAccountCreate">Create account</a>
+ <table>
+    <tr>
+         <th>Name</th>
+        <th>Sum</th>
+    </tr>
+@foreach(var acc in @Model)
+{
+    <tr>
+        <td>@acc.Name</td>
+        <td>@acc.Sum</td>
+        <td>
+            <form asp-action="BankAccountClose" asp-route-id="@acc.Id" method="post">
+                    <a asp-action="Redact" asp-route-id="@acc.Id">go to account</a>
+                    <button type="submit"> Delete</button>
+            </form>
+                   
+   
+        </td>
+    </tr>
+}    
+ </table>

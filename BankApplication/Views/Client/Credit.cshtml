@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model IEnumerable<BankApplication.Models.Credit>
+<a asp-action="ApplyForCredit">Apply for credit</a>
+ <table>
+    <tr>
+        <th>Sum in credit</th>
+        <th>Must-sum in credit</th>
+         <th>Credit start</th>
+         <th>Credit finish</th>
+    </tr>
+@foreach(var credit in @Model)
+{
+    <tr>
+       
+        <td>@credit.CurrentSum</td>
+         <td>@credit.MustSum</td>
+         <td>@credit.TimeBegin</td>
+          <td>@credit.TimeFinish</td>
+        <td>
+            
+            <a asp-action="PutSumToCredit" asp-route-id="@credit.Id">put sum to credit</a>
+                    
+  
+        </td>
+    </tr>
+}    
+ </table>

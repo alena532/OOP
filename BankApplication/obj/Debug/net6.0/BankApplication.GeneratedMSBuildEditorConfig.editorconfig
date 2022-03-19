@@ -1,0 +1,140 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BankApplication
+build_property.RootNamespace = BankApplication
+build_property.ProjectDir = \\Mac\Home\Documents\Web\BankApplication\BankApplication\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = \\Mac\Home\Documents\Web\BankApplication\BankApplication
+build_property._RazorSourceGeneratorDebug = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Account/RegistrationUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RyYXRpb25Vc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Client/Account.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEFjY291bnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Client/AddSumToAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEFkZFN1bVRvQWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Client/ApplyForCredit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEFwcGx5Rm9yQ3JlZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Client/BankAccountCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEJhbmtBY2NvdW50Q3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Client/Credit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XENyZWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Client/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Client/PutSumToCredit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFB1dFN1bVRvQ3JlZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Client/Redact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFJlZGFjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Client/TakeSumFromAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFRha2VTdW1Gcm9tQWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Manager/ClientRegistr.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxDbGllbnRSZWdpc3RyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Manager/CreditRegistr.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxDcmVkaXRSZWdpc3RyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Manager/WatchingStatistics.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxXYXRjaGluZ1N0YXRpc3RpY3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Roles/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Roles/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Roles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Roles/UserList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcVXNlckxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/User/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/User/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/User/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Documents/Web/BankApplication/BankApplication/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-61won8b3g5
