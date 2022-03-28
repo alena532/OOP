@@ -4,25 +4,7 @@
 <h1>Log in</h1>
 <form method="post" asp-action="RegistrationUser" asp-controller="Account">
     <div asp-validation-summary="ModelOnly"></div>
-        <div>
-            <label>Bank</label>
-            <select asp-for="BankName">
-                <option value="BSB">BSB</option>
-                <option value="BelarusBank">BelarusBank</option>
-                <option value="AlphaBank">AlphaBank</option>
-            </select>
-        </div>
         <br>
-        <div>
-            <label>Role</label>
-            <select asp-for="Role">
-                <option value="Client">Client</option>
-                <option value="Administrator">Administrator</option>
-                <option value="Manager">Manager</option>
-                <option value="Operator">Operator</option>
-                <option value="Enterprise specialist">Enterprise specialist</option>
-            </select>
-        </div>
         <br>
         <div>
             <label asp-for="Email"></label>

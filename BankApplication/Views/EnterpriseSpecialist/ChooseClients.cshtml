@@ -1,0 +1,61 @@
+﻿@model Dictionary<List<User>, List<BankApplication.Models.SalaryProject>>
+@using Microsoft.AspNetCore.Identity;
+
+ <h1>This clients have not got work</h1>
+<table>
+    <tr>
+        <th>Client name</th>
+        <th>Client Email</th>
+        <th>Passport series</th>
+        <th>Passport number</th>
+        <th>Identification passport number</th>
+        <th>Phone number</th>
+    </tr>
+
+
+            
+@foreach(var user in @Model.Keys)
+{
+        @foreach(var us in user)
+        {
+            <tr>
+             
+             <td>@us.UserName</td>
+             <td>@us.Email</td>
+             <td>@us.PassportSeries</td>
+             <td>@us.PassportNumber</td>
+             <td>@us.IdentificationNumber</td>
+             <td>@us.PhoneNumber</td>
+             <form asp-action="SelectClient"  asp-route-id="@us.Id" method="get" >
+                 <td>
+                    <select name="SalaryId">
+                    @foreach (var salary in @Model.Values)
+                    {
+                        @foreach(var sal in salary)
+                        {
+                             <option value="@sal.Id">@sal.ProfessionName  @sal.Salary</option>
+                        }
+                       
+                        
+                    }
+
+                    </select>
+                  </td>
+                  
+                  <td>
+                      <button type="submit">
+                        Select
+                      </button>
+                  </td>
+
+             </form>
+             
+        </tr>
+            
+        }
+   
+}
+            
+    
+</table>
+

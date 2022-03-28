@@ -1,0 +1,39 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model List<InstallmentCreation>
+    <h1>Reguests</h1>
+<table>
+    <tr>
+        <th>Client name</th>
+        <th>Needed sum</th>
+        <th>Month procent</th>
+        <th>Month amount</th>
+    </tr>
+
+
+            
+@foreach(var apply in @Model)
+    {
+         <tr>
+             <td>@apply.ClientName</td>
+             <td>@apply.NeededSum</td>
+             <td>@apply.MonthProcent</td>
+             <td>@apply.Month</td>
+             <td>
+                <form asp-action="RejectCreditOrInstallment" asp-route-Id='@apply.Id' method="post" >
+                 <button type="submit"> Reject</button>
+                </form>
+
+                <form asp-action="ConfirmInstallment" asp-route-Id="@apply.Id" method="post">
+                    
+                 <button type="submit"> Confirm</button>
+                </form>
+           
+              </td>
+         </tr>
+        
+    }
+
+            
+            
+    
+ </table>

@@ -1,0 +1,56 @@
+﻿@model BankApplication.ViewModel.MoneyStatisticForClient
+<h2>List of client actions on accounts</h2>
+<table>
+    <tr>
+        <th>Operation name</th>
+        <th>Sum</th>
+        
+    </tr>
+    
+
+            
+    @foreach(var apply in @BankApplication.ViewModel.MoneyStatisticForClient.IndividualInformation)
+    {
+         <tr>
+             <td>@apply.NameOpration</td>
+             <td>@apply.Sum</td>
+         </tr>
+    }
+
+ </table>
+
+
+    @if(@BankApplication.ViewModel.MoneyStatisticForClient.Status!=false)
+    {
+        <h2>You can reject this actions</h2>
+    <table>
+    <tr>
+        <th>Operation name</th>
+        <th>Sum</th>
+        
+    </tr>
+        @foreach(var apply in @BankApplication.ViewModel.MoneyStatisticForClient.IndividualStatistic)
+        {
+         <tr>
+             <td>@apply.NameOpration</td>
+             <td>@apply.Sum</td>
+
+             <td><a asp-action="RejectPersonalStatistics" asp-route-MoneyStaticId="@apply.Id">Reject</a></td>
+         </tr>
+        
+        }
+       </table>
+        
+    }
+   
+    
+
+
+
+
+
+
+            
+            
+    
+

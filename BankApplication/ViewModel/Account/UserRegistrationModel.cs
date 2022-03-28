@@ -6,13 +6,13 @@ namespace BankApplication.ViewModel
 {
     public class UserRegistrationModel
     {
-        [Required]
-        [Display(Name = "Role")]
-        public string Role { get; set; }
+       // [Required]
+       // [Display(Name = "Role")]
+       // public string Role { get; set; }
 
-        [Required]
-        [Display(Name = "Bank")]
-        public string BankName { get; set; }
+       // [Required]
+      //  [Display(Name = "Bank")]
+      //  public string BankName { get; set; }
 
         [Required]
         [Display(Name = "Email")]

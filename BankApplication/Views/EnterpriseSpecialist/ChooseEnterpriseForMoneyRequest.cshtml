@@ -1,0 +1,37 @@
+﻿@model IEnumerable<BankApplication.Models.Enterprise>
+@using Microsoft.AspNetCore.Identity;
+
+ <h1>This clients have not got work</h1>
+<table>
+    <tr>
+        <th>Legal name</th>
+        <th>Legal adress</th>
+        <th>Bank identification number</th>
+        
+    </tr>
+
+
+            
+@foreach(var enterprise in @Model)
+{
+        
+     <tr>
+             
+             <td>@enterprise.LegalName</td>
+             <td>@enterprise.LegalAddress</td>
+             <td>@enterprise.BankIdentificationNumber</td>
+             <td>
+                 <a asp-action="SumForSelectedEnterprise" asp-route-enterpriseId="@enterprise.Id">Select</a>
+             </td>
+
+             
+             
+        </tr>
+            
+        
+   
+}
+            
+    
+</table>
+

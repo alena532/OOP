@@ -1,6 +1,15 @@
 ﻿using BankApplication.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
+using BankApplication.Models;
+using BankApplication.Models.Entity;
+using BankApplication.ViewModel;
+using BankApplication.Data;
+using Microsoft.EntityFrameworkCore;
+using BankApplication.ViewModel.Client;
+using BankApplication.ViewModel.Account;
 
 namespace BankApplication.Controllers
 {
@@ -15,6 +24,8 @@ namespace BankApplication.Controllers
 
         public IActionResult Index()
         {
+            //string userName = HttpContext.User.Identity.Name;
+            //var userWithClient = _context.Users.Where(x => x.UserName == userName).Include(x => x.Clients).Single();
             return View();
         }
 

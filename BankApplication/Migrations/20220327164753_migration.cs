@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BankApplication.Migrations
 {
-    public partial class mymigr : Migration
+    public partial class migration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -32,11 +32,6 @@ namespace BankApplication.Migrations
                     PassportSeries = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PassportNumber = table.Column<int>(type: "int", nullable: true),
                     IdentificationNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Type = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LegalName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PAN = table.Column<int>(type: "int", nullable: true),
-                    BIC = table.Column<int>(type: "int", nullable: true),
-                    LegalAdress = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -63,29 +58,52 @@ namespace BankApplication.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BankingId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Banking", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Banking_Banking_BankingId",
+                        column: x => x.BankingId,
+                        principalTable: "Banking",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "CreditCreation",
+                name: "EnterpriseSpecialistStatistic",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NameOperation = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MoneyTransactionRequest = table.Column<int>(type: "int", nullable: true),
+                    ClientSalaryProject = table.Column<int>(type: "int", nullable: true),
+                    EnterpriseSpecialistId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EnterpriseSpecialistStatistic", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "InstallmentCreation",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NeededSum = table.Column<double>(type: "float", nullable: false),
-                    MonthProcent = table.Column<int>(type: "int", nullable: false),
+                    ClientName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MonthProcent = table.Column<int>(type: "int", nullable: true),
                     Month = table.Column<int>(type: "int", nullable: false),
                     AccountId = table.Column<int>(type: "int", nullable: false),
                     ClientId = table.Column<int>(type: "int", nullable: false),
-                    BankName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    BankId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CreditCreation", x => x.Id);
+                    table.PrimaryKey("PK_InstallmentCreation", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -95,12 +113,32 @@ namespace BankApplication.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NameOpration = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ClientI = table.Column<int>(type: "int", nullable: false)
+                    Status = table.Column<bool>(type: "bit", nullable: false),
+                    Sum = table.Column<int>(type: "int", nullable: false),
+                    ClientI = table.Column<int>(type: "int", nullable: false),
+                    BankingI = table.Column<int>(type: "int", nullable: false),
+                    AccountI = table.Column<int>(type: "int", nullable: true),
+                    InstallmentI = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_MoneyStatictic", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MoneyTransactionRequest",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SenderEnterpriseSpecialistId = table.Column<int>(type: "int", nullable: false),
+                    Sum = table.Column<double>(type: "float", nullable: false),
+                    ReceiverClientId = table.Column<int>(type: "int", nullable: false),
+                    AccountId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MoneyTransactionRequest", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -109,14 +147,14 @@ namespace BankApplication.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    ClientName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    clId = table.Column<int>(type: "int", nullable: false),
+                    bankId = table.Column<int>(type: "int", nullable: false),
+                    Number = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PassportSeries = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PassportNumber = table.Column<int>(type: "int", nullable: false),
-                    IdentificationNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BankName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    IdentificationNumber = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -142,6 +180,24 @@ namespace BankApplication.Migrations
                         principalTable: "AspNetRoles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Administrator",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Administrator", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_.Administrators_Users",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -230,46 +286,19 @@ namespace BankApplication.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Administrator",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    BankingId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Administrator", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_.Administrators_Bankings",
-                        column: x => x.BankingId,
-                        principalTable: "Banking",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_.Administrators_Users",
-                        column: x => x.UserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Client",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    BankingId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false)
+                    UserId = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
+                    ProfessionName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PayForProfession = table.Column<double>(type: "float", nullable: true),
+                    EnterpriseId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Client", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Clients_Bankings",
-                        column: x => x.BankingId,
-                        principalTable: "Banking",
-                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Clients_Users",
                         column: x => x.UserId,
@@ -278,26 +307,25 @@ namespace BankApplication.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "EnterpriseSpecialist",
+                name: "Enterprise",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     BankingId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false)
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LegalName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PayerAccountNumber = table.Column<int>(type: "int", nullable: false),
+                    BankIdentificationNumber = table.Column<int>(type: "int", nullable: false),
+                    LegalAddress = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EnterpriseSpecialist", x => x.Id);
+                    table.PrimaryKey("PK_Enterprise", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_EnterpriseSpecialists_Bankings",
+                        name: "FK_.Enterprises_Bankings",
                         column: x => x.BankingId,
                         principalTable: "Banking",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_EnterpriseSpecialists_Users",
-                        column: x => x.UserId,
-                        principalTable: "AspNetUsers",
                         principalColumn: "Id");
                 });
 
@@ -350,18 +378,48 @@ namespace BankApplication.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "SalaryProjectApplication",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BankingId = table.Column<int>(type: "int", nullable: false),
+                    ClientId = table.Column<int>(type: "int", nullable: false),
+                    SalaryProjectId = table.Column<int>(type: "int", nullable: false),
+                    Simular = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SalaryProjectApplication", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_.SalaryProjectApplication_Bankings",
+                        column: x => x.BankingId,
+                        principalTable: "Banking",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Account",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ClientId = table.Column<int>(type: "int", nullable: false),
+                    IsSalaryProject = table.Column<bool>(type: "bit", nullable: true),
+                    IsSalaryDay = table.Column<bool>(type: "bit", nullable: true),
+                    BankingId = table.Column<int>(type: "int", nullable: false),
+                    State = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Sum = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Account", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_.Accounts_Bankings",
+                        column: x => x.BankingId,
+                        principalTable: "Banking",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_.Accounts_Clients",
                         column: x => x.ClientId,
@@ -370,33 +428,96 @@ namespace BankApplication.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Credit",
+                name: "ClientsBankings",
+                columns: table => new
+                {
+                    BankingsId = table.Column<int>(type: "int", nullable: false),
+                    ClientsId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ClientsBankings", x => new { x.BankingsId, x.ClientsId });
+                    table.ForeignKey(
+                        name: "FK_ClientsBankings_Banking_BankingsId",
+                        column: x => x.BankingsId,
+                        principalTable: "Banking",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ClientsBankings_Client_ClientsId",
+                        column: x => x.ClientsId,
+                        principalTable: "Client",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ClientSalaryProject",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ClientId = table.Column<int>(type: "int", nullable: false),
-                    AccountId = table.Column<int>(type: "int", nullable: false),
-                    MonthProcent = table.Column<double>(type: "float", nullable: false),
-                    TimeBegin = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    TimeNow = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    TimeFinish = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    MustSum = table.Column<double>(type: "float", nullable: false),
-                    CurrentSum = table.Column<double>(type: "float", nullable: false),
-                    LengthMonth = table.Column<int>(type: "int", nullable: false)
+                    EnterpriseId = table.Column<int>(type: "int", nullable: false),
+                    SalaryProjectId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Credit", x => x.Id);
+                    table.PrimaryKey("PK_ClientSalaryProject", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_.Credits_Accounts",
-                        column: x => x.AccountId,
-                        principalTable: "Account",
+                        name: "FK_.ClientSalaryProjects_Enterprises",
+                        column: x => x.EnterpriseId,
+                        principalTable: "Enterprise",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "EnterpriseSpecialist",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BankingId = table.Column<int>(type: "int", nullable: false),
+                    EnterpriseId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EnterpriseSpecialist", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_EnterpriseSpecialists_Bankings",
+                        column: x => x.BankingId,
+                        principalTable: "Banking",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_.Credits_Clients",
-                        column: x => x.ClientId,
-                        principalTable: "Client",
+                        name: "FK_EnterpriseSpecialists_Enterprises",
+                        column: x => x.EnterpriseId,
+                        principalTable: "Enterprise",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_EnterpriseSpecialists_Users",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SalaryProject",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    EnterpriseId = table.Column<int>(type: "int", nullable: false),
+                    ProfessionName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Salary = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SalaryProject", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_.SalaryProjects_Enterprises",
+                        column: x => x.EnterpriseId,
+                        principalTable: "Enterprise",
                         principalColumn: "Id");
                 });
 
@@ -407,12 +528,17 @@ namespace BankApplication.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ClientId = table.Column<int>(type: "int", nullable: false),
+                    BankingId = table.Column<int>(type: "int", nullable: false),
                     AccountId = table.Column<int>(type: "int", nullable: false),
                     TimeBegin = table.Column<DateTime>(type: "datetime2", nullable: false),
                     TimeNow = table.Column<DateTime>(type: "datetime2", nullable: true),
                     TimeFinish = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    MustSum = table.Column<int>(type: "int", nullable: false),
-                    CurrentSum = table.Column<int>(type: "int", nullable: false)
+                    MustSum = table.Column<double>(type: "float", nullable: false),
+                    CurrentSum = table.Column<double>(type: "float", nullable: false),
+                    State = table.Column<bool>(type: "bit", nullable: true),
+                    LengthMonth = table.Column<int>(type: "int", nullable: false),
+                    Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MonthProcent = table.Column<double>(type: "float", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -423,6 +549,11 @@ namespace BankApplication.Migrations
                         principalTable: "Account",
                         principalColumn: "Id");
                     table.ForeignKey(
+                        name: "FK_.Installments_Bankings",
+                        column: x => x.BankingId,
+                        principalTable: "Banking",
+                        principalColumn: "Id");
+                    table.ForeignKey(
                         name: "FK_.Installments_Clients",
                         column: x => x.ClientId,
                         principalTable: "Client",
@@ -430,14 +561,14 @@ namespace BankApplication.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Account_BankingId",
+                table: "Account",
+                column: "BankingId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Account_ClientId",
                 table: "Account",
                 column: "ClientId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Administrator_BankingId",
-                table: "Administrator",
-                column: "BankingId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Administrator_UserId",
@@ -484,8 +615,8 @@ namespace BankApplication.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Client_BankingId",
-                table: "Client",
+                name: "IX_Banking_BankingId",
+                table: "Banking",
                 column: "BankingId");
 
             migrationBuilder.CreateIndex(
@@ -494,19 +625,29 @@ namespace BankApplication.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Credit_AccountId",
-                table: "Credit",
-                column: "AccountId");
+                name: "IX_ClientSalaryProject_EnterpriseId",
+                table: "ClientSalaryProject",
+                column: "EnterpriseId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Credit_ClientId",
-                table: "Credit",
-                column: "ClientId");
+                name: "IX_ClientsBankings_ClientsId",
+                table: "ClientsBankings",
+                column: "ClientsId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Enterprise_BankingId",
+                table: "Enterprise",
+                column: "BankingId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_EnterpriseSpecialist_BankingId",
                 table: "EnterpriseSpecialist",
                 column: "BankingId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_EnterpriseSpecialist_EnterpriseId",
+                table: "EnterpriseSpecialist",
+                column: "EnterpriseId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_EnterpriseSpecialist_UserId",
@@ -517,6 +658,11 @@ namespace BankApplication.Migrations
                 name: "IX_Installment_AccountId",
                 table: "Installment",
                 column: "AccountId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Installment_BankingId",
+                table: "Installment",
+                column: "BankingId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Installment_ClientId",
@@ -542,6 +688,16 @@ namespace BankApplication.Migrations
                 name: "IX_Operator_UserId",
                 table: "Operator",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SalaryProject_EnterpriseId",
+                table: "SalaryProject",
+                column: "EnterpriseId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SalaryProjectApplication_BankingId",
+                table: "SalaryProjectApplication",
+                column: "BankingId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -565,16 +721,22 @@ namespace BankApplication.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Credit");
+                name: "ClientSalaryProject");
 
             migrationBuilder.DropTable(
-                name: "CreditCreation");
+                name: "ClientsBankings");
 
             migrationBuilder.DropTable(
                 name: "EnterpriseSpecialist");
 
             migrationBuilder.DropTable(
+                name: "EnterpriseSpecialistStatistic");
+
+            migrationBuilder.DropTable(
                 name: "Installment");
+
+            migrationBuilder.DropTable(
+                name: "InstallmentCreation");
 
             migrationBuilder.DropTable(
                 name: "Manager");
@@ -583,7 +745,16 @@ namespace BankApplication.Migrations
                 name: "MoneyStatictic");
 
             migrationBuilder.DropTable(
+                name: "MoneyTransactionRequest");
+
+            migrationBuilder.DropTable(
                 name: "Operator");
+
+            migrationBuilder.DropTable(
+                name: "SalaryProject");
+
+            migrationBuilder.DropTable(
+                name: "SalaryProjectApplication");
 
             migrationBuilder.DropTable(
                 name: "UserCreation");
@@ -593,6 +764,9 @@ namespace BankApplication.Migrations
 
             migrationBuilder.DropTable(
                 name: "Account");
+
+            migrationBuilder.DropTable(
+                name: "Enterprise");
 
             migrationBuilder.DropTable(
                 name: "Client");

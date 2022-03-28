@@ -10,13 +10,6 @@ namespace BankApplication.Models
         public string? PassportSeries { get; set; }
         public int? PassportNumber { get; set; }
         public string? IdentificationNumber { get; set; }
-       
-        public string? Type { get; set; } 
-        public string? LegalName { get; set; }
-        public int? PAN { get; set; }
-        public int? BIC { get; set; }
-        public string? LegalAdress { get; set; }
-
 
         public virtual ICollection<Client> Clients { get; set; } 
         public virtual ICollection<Operator> Operators { get; set; } 

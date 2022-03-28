@@ -1,0 +1,45 @@
+﻿@using BankApplication.Models;
+@model BankApplication.ViewModel.Client.CreditOrInstallmentApplying;
+<link rel="stylesheet" href="~/css/REGISTRUSERSTYLE.css" />
+<h1>Applying</h1>
+<form method="post" asp-action="ApplyForCredit" asp-controller="Client">
+    <div asp-validation-summary="ModelOnly"></div>
+        <div>
+            <label>Account name</label>
+            <input type="text" asp-for="Account" />
+        </div>
+        <br>
+
+        <div>
+             <label>Needed sum</label>
+            <input type="text" asp-for="NeededSum" />
+        </div>
+        <br>
+
+        <div>
+             <select asp-for="MonthProcent">
+                <option value=2>2%</option>
+                <option value=3>3%</option>
+                <option value=5>5%</option>
+                <option value=7>7%</option>
+            </select>
+
+        </div>
+        <br>
+
+         <div>
+             <select asp-for="Month">
+                <option value=3>3 months</option>
+                <option value=6>6 months</option>
+                <option value=12>12 months</option>
+                <option value=24>24 month</option>
+                 <option value=36>36 month</option>
+            </select>
+        </div>
+         <br>
+
+        <div>
+            <input type="submit" value="submit" />
+        </div>
+</form>
+

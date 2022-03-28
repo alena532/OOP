@@ -1,24 +1,46 @@
 ﻿@using Microsoft.AspNetCore.Identity;
-@model IEnumerable<BankApplication.Models.Account>
-<a asp-action="BankAccountCreate">Create account</a>
+@model Dictionary<List<BankApplication.Models.Account>,int>
+@foreach(var id in @Model.Values)
+{
+    <a asp-action="BankAccountCreate" asp-route-BankId="@id">Create account</a>
+}
+
  <table>
     <tr>
-         <th>Name</th>
+        <th>Name</th>
         <th>Sum</th>
+        <th>Status</th>
     </tr>
-@foreach(var acc in @Model)
+@foreach(var acco in @Model.Keys)
 {
-    <tr>
-        <td>@acc.Name</td>
-        <td>@acc.Sum</td>
-        <td>
-            <form asp-action="BankAccountClose" asp-route-id="@acc.Id" method="post">
-                    <a asp-action="Redact" asp-route-id="@acc.Id">go to account</a>
-                    <button type="submit"> Delete</button>
-            </form>
+        @foreach(var acc in acco)
+        {
+            <tr>
+                <td>@acc.Name</td>
+                <td>@acc.Sum</td>
+                <td>@acc.State</td>
+             <td>
+            
+                        @if (acc.State == "Usual")
+                        {
+                            <form asp-action="BankAccountClose" asp-route-id="@acc.Id" method="post">
+                                <a asp-action="StatusChangeToFreeze" asp-route-id="@acc.Id">freeze account</a>
+                                <a asp-action="Redact" asp-route-id="@acc.Id">go to account</a>
+                  
+                                <button type="submit"> Delete</button>
+                             </form>
+                        }
+                        @if (acc.State == "Freeze")
+                        {
+                             <a asp-action="StatusChangeToUsual" asp-route-id="@acc.Id">unfreeze account</a>
+                        }
+                       
+
+                   
                    
    
-        </td>
-    </tr>
+            </td>
+             </tr>
+        }
 }    
  </table>

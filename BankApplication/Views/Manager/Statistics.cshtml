@@ -1,0 +1,27 @@
+﻿@using BankApplication.Models.Entity;
+@using Microsoft.AspNetCore.Identity;
+@model Dictionary<BankApplication.Models.Entity.Client,User>
+    <h1>Statistic</h1>
+    <h2>To see client actions in the bank, select client</h2>
+
+
+            
+@foreach(var ClientUser in @Model)
+{
+    <div>
+        <a asp-action="PersonalStatistics" asp-route-client="@ClientUser.Key.Id">@ClientUser.Value.UserName</a>
+    </div>
+   
+    
+           @* <form asp-action="RejectOperation" asp-route-userName='@user.Id' method="post">
+                    
+                <button type="submit"> Reject</button>
+            </form>
+          *@
+            
+           
+         
+}
+            
+    
+ 

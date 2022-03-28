@@ -1,0 +1,26 @@
+﻿@model IEnumerable<BankApplication.Models.Banking>
+<h2>BankApplication includes these banks:</h2>
+<div>
+    BSB
+    AlphaBank
+    BelarusBank
+</div>
+
+<h2>You have account in these banks:</h2>
+ 
+@foreach(var bnk in @Model)
+{
+   <div>
+       @bnk.Name
+
+    @*
+         <a asp-action="RemoveBank"  asp-route-id="@bnk.Id">Deelte account in bank</a>
+
+    *@  
+   </div> 
+                    
+}  
+<a asp-action="AddBank">Add account in new bank</a>
+
+
+

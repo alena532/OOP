@@ -1,0 +1,42 @@
+﻿@model Dictionary<BankApplication.Models.Entity.Client,BankApplication.Models.User>
+@using Microsoft.AspNetCore.Identity;
+
+ <h1>Workers</h1>
+<table>
+    <tr>
+        <th>Client name</th>
+        <th>Client Email</th>
+        <th>Passport series</th>
+        <th>Passport number</th>
+        <th>Identification passport number</th>
+        <th>Phone number</th>
+        <th>Profession</th>
+    </tr>
+
+
+            
+@foreach(var user in @Model)
+{
+        
+            <tr>
+             
+             <td>@user.Value.UserName</td>
+             <td>@user.Value.Email</td>
+             <td>@user.Value.PassportSeries</td>
+             <td>@user.Value.PassportNumber</td>
+             <td>@user.Value.IdentificationNumber</td>
+             <td>@user.Value.PhoneNumber</td>
+             <td>@user.Key.ProfessionName</td>
+             <td><a asp-action="SumForSelectedClient" asp-route-ClientId="@user.Key.Id">Select</a></td>
+             
+                      
+             
+        </tr>
+            
+        
+   
+}
+            
+    
+</table>
+

@@ -10,7 +10,7 @@
          <label> In your account is @Model[i]</label>
         <label> Current sum in credit account is @Model[++i]</label>
          <label> Must sum in credit account is @Model[++i]</label>
-         <form method="post" asp-action="PutSumToCredit" asp-route-CreditId=@Model[3]> 
+         <form method="post" asp-action="PutSumToCreditOrInstallment" asp-route-CreditId=@Model[3]> 
              <input type="text" name="Sum" />
               <button type="submit">OK</button>
          </form>

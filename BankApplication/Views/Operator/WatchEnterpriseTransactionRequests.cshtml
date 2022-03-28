@@ -1,0 +1,48 @@
+﻿@model BankApplication.ViewModel.MoneyTransactionFromEnterprise
+@using Microsoft.AspNetCore.Identity;
+
+ <h1>Applications of money transactions</h1>
+<table>
+    <tr>
+        <th>Client name</th>
+        <th>Client Email</th>
+        <th>Passport series</th>
+        <th>Passport number</th>
+        <th>Identification passport number</th>
+        <th>Enterprise name</th>
+        <th>Sum for transaction</th>
+        <th>Account name client</th>
+    </tr>
+
+@{
+        int idx = -1;
+    }
+            
+@foreach(var user in @Model.ClientUsers)
+{
+        ++idx;
+
+       <tr>
+             
+             <td>@user.Value.UserName</td>
+             <td>@user.Value.Email</td>
+             <td>@user.Value.PassportSeries</td>
+             <td>@user.Value.PassportNumber</td>
+             <td>@user.Value.IdentificationNumber</td>
+             <td>@Model.Enterprises[idx]</td>
+             <td>@Model.Sums[idx]</td>
+             <td>@Model.Accounts[idx].Name</td>
+             <td><a asp-action="ConfirmTransactionFromEnterprise" asp-route-RequestId="@Model.MoneyTransactionRequestId[idx]">Confirm</a></td>
+             <td><a asp-action="RejectTransactionFromEnterprise" asp-route-RequestId="@Model.MoneyTransactionRequestId[idx]">Reject</a></td>
+             
+                      
+             
+        </tr>
+            
+        
+   
+}
+            
+    
+</table>
+

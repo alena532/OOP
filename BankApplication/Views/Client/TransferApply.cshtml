@@ -1,0 +1,48 @@
+﻿@using BankApplication.Models;
+@model BankApplication.ViewModel.Account.AccountTransferModel
+<link rel="stylesheet" href="~/css/REGISTRUSERSTYLE.css" />
+<h1>Log in</h1>
+<form method="post" asp-action="TransferApply" asp-controller="Client">
+    <div asp-validation-summary="ModelOnly"></div>
+        <br>
+        <br>
+        <div>
+            <label asp-for="Receiver"></label>
+            <input type="text" asp-for="Receiver" />
+            <span asp-validation-for="Receiver"></span>
+        </div>
+        <br>
+        <div>
+            <label asp-for="BankNameReceiver"></label>
+            <input type="text" asp-for="BankNameReceiver" />
+            <span asp-validation-for="BankNameReceiver"></span>
+        </div>
+        <br>
+        <div>
+            <label asp-for="AccountReceiver"></label>
+            <input type="text" asp-for="AccountReceiver" />
+            <span asp-validation-for="AccountReceiver"></span>
+        </div>
+        <br>
+         <div>
+            <label asp-for="BankNameSender"></label>
+            <input type="text" asp-for="BankNameSender" />
+            <span asp-validation-for="BankNameSender"></span>
+        </div>
+        <br>
+        <div>
+            <label asp-for="AccountSender"></label>
+            <input type="text" asp-for="AccountSender" />
+            <span asp-validation-for="AccountSender"></span>
+        </div>
+        <br>
+         <div>
+            <label asp-for="Sum"></label>
+            <input type="number" asp-for="Sum" />
+            <span asp-validation-for="Sum"></span>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="submit" />
+        </div>
+</form>

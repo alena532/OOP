@@ -1,0 +1,18 @@
+﻿@model BankApplication.ViewModel.MoneyTransaction
+<form asp-action="CreateRequestForEnterprise"   method="get" >
+    <div asp-validation-summary="ModelOnly"></div>
+        <div>
+            <label asp-for="Sum">Sum</label>
+            <input type="number" asp-for="Sum" />
+        </div>
+        <div>
+            <label asp-for="AccountName">Account name receiver</label>
+            <input type="string" asp-for="AccountName" />
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="submit" />
+        </div>
+                  
+
+</form>

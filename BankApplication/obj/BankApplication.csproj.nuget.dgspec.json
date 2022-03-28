@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "\\\\Mac\\Home\\Documents\\Web\\BankApplication\\BankApplication\\BankApplication.csproj": {}
+    "\\\\Mac\\Home\\Documents\\html+css\\Web\\BankApplication\\BankApplication\\BankApplication.csproj": {}
   },
   "projects": {
-    "\\\\Mac\\Home\\Documents\\Web\\BankApplication\\BankApplication\\BankApplication.csproj": {
+    "\\\\Mac\\Home\\Documents\\html+css\\Web\\BankApplication\\BankApplication\\BankApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Documents\\Web\\BankApplication\\BankApplication\\BankApplication.csproj",
+        "projectUniqueName": "\\\\Mac\\Home\\Documents\\html+css\\Web\\BankApplication\\BankApplication\\BankApplication.csproj",
         "projectName": "BankApplication",
-        "projectPath": "\\\\Mac\\Home\\Documents\\Web\\BankApplication\\BankApplication\\BankApplication.csproj",
+        "projectPath": "\\\\Mac\\Home\\Documents\\html+css\\Web\\BankApplication\\BankApplication\\BankApplication.csproj",
         "packagesPath": "C:\\Users\\alenavorobej\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Documents\\Web\\BankApplication\\BankApplication\\obj\\",
+        "outputPath": "\\\\Mac\\Home\\Documents\\html+css\\Web\\BankApplication\\BankApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alenavorobej\\AppData\\Roaming\\NuGet\\NuGet.Config",

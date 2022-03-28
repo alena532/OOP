@@ -12,5 +12,7 @@ namespace BankApplication.ViewModel
         [Required]
         [Display(Name = "Sum")]
         public  string Sum { get; set; }
+
+        public static Banking banking { get; set; }
     }
 }

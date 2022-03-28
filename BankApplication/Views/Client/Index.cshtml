@@ -1,22 +1,26 @@
-﻿@model BankApplication.Models.Entity.Client
- <a asp-action="Account" asp-controller="Client">Accounts</a>
-<a asp-action="Credit" asp-controller="Client">Credits</a>
-@*<table>
-    <tr>
-         <th>AccountName</th>
-        <th>Sum</th>
-    </tr>
-@foreach(var acc in @Model)
-{
-    <tr>
-        <td>@acc.Name</td>
-        <td>@acc.Sum</td>
-        <td>
-           
-                   
-   
-        </td>
-    </tr>
-}    
- </table>
-*@
+﻿<div>
+    <a asp-action="Bank" asp-controller="Client">Banks</a>
+</div>
+
+<div>
+    <a asp-action="ChooseBankAccount" asp-controller="Client">Accounts</a>
+</div>
+
+<div>
+   <a asp-action="ChooseBankCredit" asp-controller="Client">Credits</a>
+</div>
+
+<div>
+    <a asp-action="ChooseBankInstallment" asp-controller="Client">Installments</a>
+</div>
+
+<div>
+    <a asp-action="TransferApply" asp-controller="Client">Transfers</a>
+</div>
+
+<div>
+    <a asp-action="ChooseBankSalaryProject" asp-controller="Client">Application for salary project</a>
+</div>
+ 
+
+

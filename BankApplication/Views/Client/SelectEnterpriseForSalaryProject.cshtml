@@ -1,0 +1,11 @@
+﻿@model IEnumerable<BankApplication.Models.Enterprise>
+<link rel="stylesheet" href="~/css/REGISTRUSERSTYLE.css" />
+    <form asp-action="SelectSalaryProject" method="get">
+      <select  name="EnterpriseId">
+        @foreach (var enterprise in @Model)
+         {
+         <option value=@enterprise.Id>@enterprise.LegalName</option>
+         }
+     </select>
+     <button>OK</button>
+   </form>

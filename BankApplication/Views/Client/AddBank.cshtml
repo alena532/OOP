@@ -1,0 +1,11 @@
+﻿@model IEnumerable<BankApplication.Models.Banking>
+    <form asp-action="addBank" method="post">
+      <select  name="Id">
+        @foreach (var bnk in @Model)
+         {
+         <option value=@bnk.Name>@bnk.Name</option>
+         }
+     </select>
+     <button>OK</button>
+   </form>
+    

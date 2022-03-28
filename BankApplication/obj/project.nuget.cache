@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wGTSaPO5maGFjpYEZ/lWa+6TscvrqkAxgtpwU7L/sr7K3BpzyWQzUcUkzajuwaEriF8G5QydfQZAj1P8Ma5nyA==",
+  "dgSpecHash": "yIFwl4vetXa8TLktbajsOrXURPnkciIeT1DMm80jGefJPgVSSbQ14CSTB4vUS82qE29PSSAgmRE38P1rfP+lNw==",
   "success": true,
-  "projectFilePath": "\\\\Mac\\Home\\Documents\\Web\\BankApplication\\BankApplication\\BankApplication.csproj",
+  "projectFilePath": "\\\\Mac\\Home\\Documents\\html+css\\Web\\BankApplication\\BankApplication\\BankApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alenavorobej\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\alenavorobej\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.1\\microsoft.aspnetcore.cryptography.internal.6.0.1.nupkg.sha512",

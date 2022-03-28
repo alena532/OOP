@@ -12,17 +12,26 @@ namespace BankApplication.Models
 
         public virtual ICollection<Client> Clients { get; set; }
         public virtual ICollection<Operator> Operators { get; set; }
-        public virtual ICollection<Administrator> Administrators { get; set; }
+        
         public virtual ICollection<EnterpriseSpecialist> EnterpriseSpecialists { get; set; }
         public virtual ICollection<Manager> Managers { get; set; }
-        
+        public virtual ICollection<Account> Accounts { get; set; }
+        public virtual ICollection<Banking> Bankings { get; set; }
+        public virtual ICollection<Installment> Installments { get; set; }
+        public virtual ICollection<Enterprise> Enterprises { get; set; }
+        public virtual ICollection<SalaryProjectApplication> SalaryProjectApplications { get; set; }
         public Banking()
         {
             Clients = new HashSet<Client>();
             Operators = new HashSet<Operator>();
-            Administrators = new HashSet<Administrator>();
+            
             EnterpriseSpecialists = new HashSet<EnterpriseSpecialist>();
             Managers = new HashSet<Manager>();
+            Accounts = new HashSet<Account>();
+            Bankings=new HashSet<Banking>();
+            Installments = new HashSet<Installment>();
+            Enterprises=new HashSet<Enterprise>();
+            SalaryProjectApplications=new HashSet<SalaryProjectApplication>();
         }
 
 

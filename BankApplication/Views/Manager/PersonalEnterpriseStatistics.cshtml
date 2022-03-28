@@ -1,0 +1,41 @@
+﻿@model BankApplication.ViewModel.StatisticForEnterpriseSpecialist
+<h2>List of enterprise specialist actions</h2>
+<table>
+    <tr>
+        <th>Operation name</th>
+        
+    </tr>
+    
+
+            
+    @foreach(var apply in @BankApplication.ViewModel.StatisticForEnterpriseSpecialist.Information)
+    {
+         <tr>
+             <td>@apply.NameOperation</td>
+         </tr>
+    }
+
+ </table>
+
+
+    
+        <h2>You can reject this actions</h2>
+    <table>
+    <tr>
+        <th>Operation name</th>
+        
+        
+    </tr>
+        @foreach(var apply in @BankApplication.ViewModel.StatisticForEnterpriseSpecialist.Statistic)
+        {
+         <tr>
+             <td>@apply.NameOperation</td>
+            
+
+             <td><a asp-action="RejectPersonalEnterpriseStatistics" asp-route-EnterpriseSpecialistStatisticId="@apply.Id">Reject</a></td>
+         </tr>
+        
+        }
+       </table>
+        
+    

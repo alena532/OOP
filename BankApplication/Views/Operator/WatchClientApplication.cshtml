@@ -1,0 +1,38 @@
+﻿@model BankApplication.ViewModel.ClientApplicationForSimular
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Passport series</th>
+        <th>Passport number</th>
+        <th>Identification number</th>
+        <th>Profession name</th>
+        <th>Salary</th>
+        <th>Availability documents </th>
+    </tr>
+    @{
+        int idx = -1;
+    }
+@foreach(var userSalary in @Model.UserSalary)
+{
+        ++idx;
+        <tr>
+                <td>@userSalary.Key.UserName</td>
+                <td>@userSalary.Key.Email</td>
+                <td>@userSalary.Key.PassportSeries</td>
+                <td>@userSalary.Key.PassportNumber</td>
+                <td>@userSalary.Key.IdentificationNumber</td>
+                <td>@userSalary.Value.ProfessionName</td>
+                <td>@userSalary.Value.Salary</td>
+ 
+                 <td>@Model.Applications[idx].Simular</td>
+                
+             <td>
+                <a asp-action="ConfirmSalaryProject" asp-route-SalaryProjectApplicationId="@Model.Applications[idx].Id">Confirm salary project</a>
+                        
+            </td>
+          </tr>
+        
+}    
+ </table>
+
