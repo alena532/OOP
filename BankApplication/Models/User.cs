@@ -17,6 +17,14 @@ namespace BankApplication.Models
         public virtual ICollection<Manager> Managers { get; set; }
         public virtual ICollection<Administrator> Administrators { get; set; }
 
+        public int Property
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public User()
         {
             Managers = new HashSet<Manager>();

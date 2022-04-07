@@ -8,5 +8,13 @@
        
         public int ReceiverClientId { get; set; }
         public int AccountId { get; set; }
+
+        public int Property
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

@@ -2270,11 +2270,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "\\\\Mac\\Home\\Documents\\html+css\\Web\\BankApplication\\BankApplication\\BankApplication.csproj",
+      "projectUniqueName": "Z:\\Users\\alenavorobej\\Documents\\Web\\BankApplication\\BankApplication\\BankApplication.csproj",
       "projectName": "BankApplication",
-      "projectPath": "\\\\Mac\\Home\\Documents\\html+css\\Web\\BankApplication\\BankApplication\\BankApplication.csproj",
+      "projectPath": "Z:\\Users\\alenavorobej\\Documents\\Web\\BankApplication\\BankApplication\\BankApplication.csproj",
       "packagesPath": "C:\\Users\\alenavorobej\\.nuget\\packages\\",
-      "outputPath": "\\\\Mac\\Home\\Documents\\html+css\\Web\\BankApplication\\BankApplication\\obj\\",
+      "outputPath": "Z:\\Users\\alenavorobej\\Documents\\Web\\BankApplication\\BankApplication\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alenavorobej\\AppData\\Roaming\\NuGet\\NuGet.Config",
