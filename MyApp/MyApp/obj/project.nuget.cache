@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "T+qsoDdFVdLZidz+768z+pZLz6wrLlbt9T5CKrYnfIf5ThRlgTqm+04lRSTxlyULAQdT7lpUVDx3/qa1C+akxg==",
+  "success": true,
+  "projectFilePath": "\\\\Mac\\Home\\Documents\\Web\\MyApp\\MyApp\\MyApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alenavorobej\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
